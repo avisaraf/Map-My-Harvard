@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<!--
+
+index.html
+
+Computer Science 50
+
+Framework for CS50 Shuttle.
+
+-->
+
+<html>
+    <head>
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet"/>
+        <link href="css/mapme.css" rel="stylesheet"/>
+        <script src="https://www.google.com/jsapi"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/math3d.js"></script>
+        <script src="js/buildings.js"></script>
+        <script src="js/houses.js"></script>
+        <script src="js/mapme.js"></script>
+        <title>Map My Harvard</title>
+    </head>
+    <body onload = "initialize()">
+        <div class = "title">
+            map my harvard    
+        </div>
+        <div id="map">
+        </div>
+        <div class = "left-nav">
+            <div>
+                <div id="direction-panel"></div>
+            </div>
+            <div class = "list-element">
+            This was CS50.
+            </div>
+        </div>
+        <div class = "right-nav">
+            <div class = "list-element">  
+                It's 
+                <span id="time_span"></span>
+                <script src="js/time.js"></script>
+                .</br>Where to?
+            </div>
+            <form id="locate">
+                <fieldset>
+                    <div class="ui-widget">
+                        <input id = "search" autofocus class="ui-widget" name="search" placeholder="Search" type="text"/>
+                            <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+                            <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+                            <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+                            <script src="js/autocomplete.js"></script>
+                    </div>
+                </fieldset>
+            </form>
+            <form id="navigate">
+                <fieldset>
+                    <div class="ui-widget">
+                        <input id = "start" autofocus class="ui-widget" name="start" placeholder="Origin" type="text"/>                        
+                            <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+                            <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+                            <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+                            <script src="js/autocomplete.js"></script>
+                   </div>
+                   <div class="ui-widget">
+                        <input id = "end" autofocus class="ui-widget" name="end" placeholder="Destination" type="text"/>
+                            <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+                            <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+                            <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+                            <script src="js/autocomplete.js"></script>
+                    </div>
+                </fieldset>
+                <fieldset>
+                        <select id="mode" onchange="calcRoute();">
+                        <option value="">Mode of Travel</option>
+                        <option value="DRIVING">Driving</option>
+                        <option value="WALKING">Walking</option>
+                        <option value="BICYCLING">Bicycling</option>
+                        <option value="TRANSIT">Transit</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class = "footer">
+            <div class = "foot">
+                Developed by Avinash Saraf, Laura Chang, and Michael Kennedy-Yoon.
+            </div>
+            <div class = "foot">
+                Powered by the Google Maps API.
+            </div>
+        </div>
+    </body>
+</html>
